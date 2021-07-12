@@ -17,6 +17,6 @@ favoritos de YouTube, ver, modificarlos y borrarlos.
 2. `composer install`
 3. Si tienes XAMPP en htdocs
 
-##Licencia
+## Licencia
 MIT
 
