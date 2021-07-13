@@ -10,7 +10,6 @@ favoritos de YouTube, ver, modificarlos y borrarlos.
 * MySQL o MariaDB
 * PHP 8 (puedes probar con la versión que tengas)
 * Si no posees los 2 anteriores requisitos puedes instalar XAMPP
-* Symfony 5
 
 ## Pasos a seguir (dentro del proyecto)
 1. En un sistema gestor de bbdd importar database.sql de la carpeta database
