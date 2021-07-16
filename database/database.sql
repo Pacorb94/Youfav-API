@@ -41,14 +41,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `users`
---
-
-INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'tati', 'poceiro', 'tati@tati.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'User', '2021-07-02 21:01:48', '2021-07-04 03:48:36'),
-(2, 'a', 'e', 'a@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'User', '2021-07-02 23:22:07', '2021-07-02 23:22:07');
-
 -- --------------------------------------------------------
 
 --
