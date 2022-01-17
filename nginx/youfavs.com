@@ -13,7 +13,7 @@ server {
         if ($request_method = OPTIONS ) {
              return 200;
         }
-        server_name localhost:9080;
+        server_name localhost:8082;
         #La ruta inicial cargará index.php 
 	    location / {
             try_files $uri /index.php?$args;
