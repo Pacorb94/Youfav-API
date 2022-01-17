@@ -1,0 +1,55 @@
+version: '3.5'
+
+#Red que compartirán todos los contenedores
+networks:
+    youfavs:
+
+services:
+
+    back-deploy:
+        build: 
+            context: ./
+            dockerfile: nginx/dockerfile
+        container_name: back
+        ports:
+            - "9080:80"
+        depends_on:
+            - php
+            - mysql
+        restart: always
+        networks:
+            - youfavs
+
+    php:
+        build:
+            context: ./
+            dockerfile: php/dockerfile
+        container_name: php
+        ports:
+            - "9000:9000"
+        depends_on: 
+            - mysql
+        restart: always
+        networks:
+            - youfavs
+
+    mysql:
+        image: mysql:8.0
+        container_name: mysql
+        ports:
+            - "4306:3306"
+        #Lo que esté en la izquierda se renombrará a lo que esté en la derecha
+        volumes:
+            - database-youfavs:/var/lib/mysql
+        restart: always
+        #Variable de entorno
+        environment:
+            MYSQL_DATABASE: youfavs
+            MYSQL_ROOT_PASSWORD: '1'
+        networks:
+            - youfavs
+
+volumes: 
+    #Este volumen permanece aunque destruyamos el contenedor de mysql y lo volvamos a crear por 
+    #lo que la base de datos no se borra
+    database-youfavs:

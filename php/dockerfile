@@ -1,0 +1,10 @@
+FROM php:8.0-fpm-alpine
+#Actualizamos los paquetes de apk, instalamos bash y las extensiones de PHP
+RUN apk --no-cache update && apk --no-cache add bash && docker-php-ext-install pdo pdo_mysql
+#Creamos este directorio y nos movemos a él
+WORKDIR /var/www/Youfavs
+COPY ../ ./
+#Descargamos Composer y copiamos su directorio en el mismo directorio del contenedor
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+#Instalamos las dependencias y damos permisos a varios directorios
+RUN composer install && chmod 777 ./var/log ./public/* 
