@@ -12,7 +12,7 @@ services:
             dockerfile: nginx/dockerfile
         container_name: back
         ports:
-            - "9080:80"
+            - "8082:80"
         depends_on:
             - php
             - mysql
