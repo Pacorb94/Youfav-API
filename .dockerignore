@@ -2,3 +2,7 @@ var/
 vendor/
 .git
 .gitignore
+nginx/dockerfile
+php/
+.dockerignore
+docker-compose.yml
