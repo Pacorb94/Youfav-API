@@ -30,7 +30,7 @@ final class Version20220117025209 extends AbstractMigration
                 created_at datetime not null,
                 updated_at datetime not null,
                 constraint pk_videos primary key (id),
-                constraint fk_videos_users foreign key (user_id) references users(id) on delete cascade
+                constraint fk_videos_users foreign key (user_id) references users(id)
             ) ENGINE=InnoDB;
         ');
     }
