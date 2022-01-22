@@ -1,30 +1,25 @@
-#Ruta para registrar un usuario#
-registerUser:
+register:
     path: /api/register
     controller: App\Controller\UserController::register
     methods: POST
 
-#Ruta para iniciar sesión#
 login:
     path: /api/login
     controller: App\Controller\UserController::login
     methods: POST
 
-#Ruta para modificar un usuario#
 updateUser:
-    path: /api/users/{id}/update
+    path: /api/users/{id}
     controller: App\Controller\UserController::update
     methods: PUT
 
-#Ruta para eliminar un usuario#
 deleteUser:
-    path: /api/users/{id}/delete
+    path: /api/users/{id}
     controller: App\Controller\UserController::delete
     methods: DELETE
 
-#Ruta para crear un vídeo#
 createVideo:
-    path: /api/videos/create
+    path: /api/videos
     controller: App\Controller\VideoController::create
     methods: POST
 
@@ -34,20 +29,17 @@ userVideos:
     controller: App\Controller\VideoController::getUserVideos
     methods: GET
 
-#Ruta para mostrar los detalles de un vídeo#
 videoDetails:
     path: /api/videos/{id}
     controller: App\Controller\VideoController::getVideoDetails
     methods: GET
 
-#Ruta para modificar un vídeo#
 updateVideo:
-    path: /api/videos/{id}/update
+    path: /api/videos/{id}
     controller: App\Controller\VideoController::update
     methods: PUT
 
-#Ruta para eliminar un vídeo#
 deleteVideo:
-    path: /api/videos/{id}/delete
+    path: /api/videos/{id}
     controller: App\Controller\VideoController::delete
     methods: DELETE
